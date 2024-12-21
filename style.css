@@ -1,0 +1,66 @@
+.devname {
+    font-size: 24px;
+    font-weight: bold;
+    color: darkgray
+}
+.fullname {
+color: #259096 ;
+    font-weight: bold;
+    font-size: 38px
+}
+.bg-image {
+    background-image: url(assets/media/images/slider/3.jpg);
+    background-repeat: no-repeat;
+}
+.wish1 {
+    font-size: 32px;
+    font-family: serif;
+    color: #259096 !important;
+}
+.wish2 {
+    font-size: 20px;
+    font-family: poppins;
+    color: blue !important;
+    opacity: 100%;
+    
+}
+.bg-success {
+    background-color: #259096 !important;
+}
+.image {
+    border: 6px solid #fff !important
+}
+/* parallax */
+.box-wrapper {
+    color: #259096;
+    font-size: 32px;
+    font-weight: bold;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow: 
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #259096,
+            0 0 80px #259096,
+            0 0 90px #259096,
+            0 0 100px #259096;
+    }
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
+
+        

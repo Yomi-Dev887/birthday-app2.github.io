@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Basics</title>
+    <link rel="stylesheet" href="assets/assets/bootstrap-5.2.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="text-center my-5">
+            <h2>JQuery Basics</h2>
+            <button type="button" class="btn btn-primary" id="show-rows">Restore Contents</button>
+        </div>
+        <div class="row gy-3 hide-rows">
+            <div class="col-md-4">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <form class="form" action="">
+                        <form class="row" action="">
+                        <form class="hide-rows" action="">
+                            <div class="row gy-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Full Name</label>
+                                        <input id="fullname" type="text" class="form-control">
+                                        <span class="fnfeedback text-danger"></span>
+                                        <span class="fnsfeedback text-success"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Message</label>
+                                        <textarea id="message" class="form-control" row="5"></textarea>
+                                        <span class="msgfeedback text-danger"></span>
+                                        <span class="msgsfeedback text-success"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-end">
+                                    <button id="sendmessage" class="button" class="btn-sm btn-outline-success">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <table class="table table-hover table-striped table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messages">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group">
+                            <button id="toggle-form" class="btn btn-sm btn-outline-primary">Toggle form</button>
+                            <button id="toggle-row" class="btn btn-sm btn-outline-primary">toggle row</button>
+                            <button id="hide-rows" class="btn btn-sm btn-outline-danger">hide rows</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/assets/js/jquery-3.js"></script>
+    <script src="assets/assets/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+          $(document).ready(function(){
+              $("#show-rows").hide();
+             $("#fullname").blur(function() {
+                 if ($(this).val().length < 5) {
+                     $(".fnfeedback").show();
+                     $(".fnfeedback").text("minimum of 5 chars required");
+                     $(".fnsfeedback").hide();
+                 } else {
+                     $(".fnsfeedback").show();
+                     $(".fnsfeedback").text("very good");
+                     $(".fnfeedback").hide();
+                 }
+             });
+             $("#message").blur(function() {
+                 if ($(this).val().length < 5) {
+                     $(".msgfeedback").show();
+                     $(".msgfeedback").text("minimum of 5 chars required");
+                     $(".msgsfeedback").hide();
+                 } else {
+                     $(".msgsfeedback").show();
+                     $(".msgsfeedback").text("very good");
+                     $(".msgfeedback").hide();
+                 }
+             });
+              
+              $("#toggle-form").click(function(){
+                  $(".form").toggle(5000);
+              })
+              
+              $("#toggle-row").click(function(){
+                  $(".row").toggle(5000);
+                  $("#show-rows").show();
+              })
+              
+              $("#hide-rows").click(function(){
+                  $(".hide-rows").hide(5000);
+                  $("#show-rows").show();
+              });
+              
+              $("#show-rows").click(function(){
+                  $(".hide-rows").show(5000);
+                  $(this).hide();
+              });
+          });
+    
+    </script>
+
+</body>
+
+</html>
